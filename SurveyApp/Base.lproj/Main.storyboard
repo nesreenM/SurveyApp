@@ -1,24 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Boz-oh-etR">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="XRQ-uh-sD1">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Boz-oh-etR" customClass="PageViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMc-jA-GNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="-838"/>
+        </scene>
+        <!--RedViewController-->
+        <scene sceneID="mn8-aN-NPc">
+            <objects>
+                <viewController storyboardIdentifier="RedViewController" title="RedViewController" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="NE7-Es-lrF" customClass="RedViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AhP-JR-Hqb">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hf-xg-mse">
+                                <rect key="frame" x="491" y="373.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Zwv-fe-ljB">
+                                <rect key="frame" x="983" y="364.5" width="21" height="39"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.098039215690000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Hf-xg-mse" firstAttribute="centerY" secondItem="AhP-JR-Hqb" secondAttribute="centerY" id="GmU-yb-YYU"/>
+                            <constraint firstItem="8Hf-xg-mse" firstAttribute="centerX" secondItem="AhP-JR-Hqb" secondAttribute="centerX" id="PNz-Sz-YPh"/>
+                            <constraint firstItem="Zwv-fe-ljB" firstAttribute="centerY" secondItem="AhP-JR-Hqb" secondAttribute="centerY" id="Sq8-m6-DGY"/>
+                            <constraint firstItem="ZvI-fN-05r" firstAttribute="trailing" secondItem="Zwv-fe-ljB" secondAttribute="trailing" constant="20" id="xJQ-Kl-o4r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZvI-fN-05r"/>
+                    </view>
+                    <connections>
+                        <outlet property="arrowImageView" destination="Zwv-fe-ljB" id="Rbb-Wi-BYR"/>
+                        <outlet property="redLabel" destination="8Hf-xg-mse" id="DRV-rr-1KQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Re1-hW-ay4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-326" y="-55"/>
+        </scene>
+        <!--GreenViewController-->
+        <scene sceneID="ShD-Go-UOg">
+            <objects>
+                <viewController storyboardIdentifier="GreenViewController" title="GreenViewController" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="pDG-Jx-ldm" customClass="GreenViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="He1-nk-v4x">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NESREEEN YAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3N-xJ-Fjd">
+                                <rect key="frame" x="452.5" y="373.5" width="119.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="kFk-8K-wBF">
+                                <rect key="frame" x="983" y="364.5" width="21" height="39"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kFk-8K-wBF" firstAttribute="centerY" secondItem="He1-nk-v4x" secondAttribute="centerY" id="PNW-0h-JSt"/>
+                            <constraint firstItem="k3N-xJ-Fjd" firstAttribute="centerX" secondItem="He1-nk-v4x" secondAttribute="centerX" id="PhT-z5-3FK"/>
+                            <constraint firstItem="cjS-Xe-Tyx" firstAttribute="trailing" secondItem="kFk-8K-wBF" secondAttribute="trailing" constant="20" id="Y8C-PO-ISr"/>
+                            <constraint firstItem="k3N-xJ-Fjd" firstAttribute="centerY" secondItem="He1-nk-v4x" secondAttribute="centerY" id="qZ0-5W-do1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjS-Xe-Tyx"/>
+                    </view>
+                    <connections>
+                        <outlet property="arrowImageView" destination="kFk-8K-wBF" id="gFv-Fw-cwa"/>
+                        <outlet property="label" destination="k3N-xJ-Fjd" id="IdX-Hm-dbC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-LU-D6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="-55"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was the service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGh-Py-vBL">
+                                <rect key="frame" x="377.5" y="185" width="270" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-G5-ed4" customClass="CSBubblesView" customModule="Bubbles">
+                                <rect key="frame" x="0.0" y="330" width="1024" height="484"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="484" id="tDC-Tp-OUG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
+                                        <color key="value" red="0.92549019607843142" green="0.098039215686274508" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.41506696428571427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rGh-Py-vBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0rn-sa-XxJ"/>
+                            <constraint firstItem="u6m-G5-ed4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2fr-AR-gsT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6m-G5-ed4" secondAttribute="trailing" id="MWi-SL-wLy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u6m-G5-ed4" secondAttribute="bottom" id="Oc5-X0-zKj"/>
+                            <constraint firstItem="u6m-G5-ed4" firstAttribute="top" secondItem="rGh-Py-vBL" secondAttribute="bottom" constant="64" id="zKZ-qj-bvG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bubblesView" destination="u6m-G5-ed4" id="xdZ-8K-Kdu"/>
+                        <outlet property="questionLabel" destination="rGh-Py-vBL" id="1zE-wM-h36"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="37" y="816"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="filter-arrow" width="21" height="39"/>
+    </resources>
 </document>
