@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JJG-7f-GYx">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Greeting View Controller-->
+        <scene sceneID="c3y-Sa-PjB">
+            <objects>
+                <viewController id="JJG-7f-GYx" customClass="GreetingViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7vA-ne-dbR">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rateMe" translatesAutoresizingMaskIntoConstraints="NO" id="mCt-D1-lcW">
+                                <rect key="frame" x="312" y="100" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="3rg-Fc-VyJ"/>
+                                    <constraint firstAttribute="width" constant="400" id="b1W-wU-gTk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lotwLogoMini" translatesAutoresizingMaskIntoConstraints="NO" id="Pn5-Id-Eov">
+                                <rect key="frame" x="40" y="648" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="57r-c2-JLM"/>
+                                    <constraint firstAttribute="height" constant="100" id="yFQ-TD-ImA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTj-tH-TCP">
+                                <rect key="frame" x="372.5" y="532" width="280" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Lbh-oR-tAC"/>
+                                    <constraint firstAttribute="width" constant="280" id="ofZ-5d-dKB"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="rateMeView">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rateMe:" destination="JJG-7f-GYx" eventType="touchUpInside" id="Kru-Yg-6Ji"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iTj-tH-TCP" firstAttribute="top" secondItem="mCt-D1-lcW" secondAttribute="bottom" constant="32" id="DaK-B3-jIu"/>
+                            <constraint firstItem="PPG-dG-OMV" firstAttribute="bottom" secondItem="Pn5-Id-Eov" secondAttribute="bottom" constant="20" id="Hf2-87-IxO"/>
+                            <constraint firstItem="mCt-D1-lcW" firstAttribute="centerX" secondItem="7vA-ne-dbR" secondAttribute="centerX" id="PXA-cI-DKj"/>
+                            <constraint firstItem="Pn5-Id-Eov" firstAttribute="leading" secondItem="PPG-dG-OMV" secondAttribute="leading" constant="40" id="b3h-yB-Ba9"/>
+                            <constraint firstItem="iTj-tH-TCP" firstAttribute="centerX" secondItem="7vA-ne-dbR" secondAttribute="centerX" id="l6i-es-urZ"/>
+                            <constraint firstItem="mCt-D1-lcW" firstAttribute="top" secondItem="PPG-dG-OMV" secondAttribute="top" constant="80" id="q1G-rm-dJW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PPG-dG-OMV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ee2-rc-SNJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.515625" y="151.5625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lotwLogoMini" width="272" height="98"/>
+        <image name="rateMe" width="744" height="744"/>
+        <image name="rateMeView" width="763" height="350"/>
+    </resources>
+</document>

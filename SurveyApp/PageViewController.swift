@@ -59,7 +59,8 @@ class PageViewController: UIPageViewController,SwipeDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        dataSource = self
-        
+        UIApplication.shared.statusBarStyle = .lightContent
+
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
                                direction: .forward,
