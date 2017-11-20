@@ -28,7 +28,7 @@ class FixedViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
         arrowImageView.addGestureRecognizer(tap)
         arrowImageView.isUserInteractionEnabled = true
-        terribleButton.titleEdgeInsets = UIEdgeInsetsMake((terribleButton.imageView?.image?.size.height)!, 0, 0, 0)
+        
 
     }
     @objc func tapped (){
@@ -55,4 +55,38 @@ class FixedViewController: UIViewController {
     }
     */
 
+}
+extension UIButton {
+    
+    func centerVertically(padding: CGFloat = 16) {
+        guard
+            let imageViewSize = self.imageView?.frame.size,
+            let titleLabelSize = self.titleLabel?.frame.size else {
+                return
+        }
+        
+        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
+        
+        self.imageEdgeInsets = UIEdgeInsets(
+            top: 0,
+            left: 10.0,
+            bottom: (titleLabelSize.height+padding) ,
+            right:10
+        )
+        
+        self.titleEdgeInsets = UIEdgeInsets(
+            top: 10,
+            left: 0,
+            bottom: -(totalHeight-titleLabelSize.height),
+            right: 0.0
+        )
+        
+        self.contentEdgeInsets = UIEdgeInsets(
+            top: 0.0,
+            left: 0.0,
+            bottom: 0,
+            right: 0.0
+        )
+    }
+    
 }
