@@ -8,11 +8,11 @@
 import SpriteKit
 
 extension CGFloat {
-    
+
     public static func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
     }
-    
+
     public static func random(min: CGFloat, max: CGFloat) -> CGFloat {
         return CGFloat.random() * (max - min) + min
     }
@@ -21,16 +21,16 @@ extension CGFloat {
 open class CSBubblesScene: CSFloatingCollectionScene {
     var bottomOffset: CGFloat = 0
     var topOffset: CGFloat = 0
-    
+
     override open func didMove(to view: SKView) {
         super.didMove(to: view)
         configure()
     }
-    
+
     fileprivate func configure() {
         backgroundColor = SKColor.init(red: 0, green: 0, blue: 0, alpha: 0.00001)
         scaleMode = .aspectFill
-        
+
         allowMultipleSelection = true
         var bodyFrame = frame
         bodyFrame.size.width = CGFloat(magneticField.minimumRadius)
@@ -40,7 +40,7 @@ open class CSBubblesScene: CSFloatingCollectionScene {
         physicsBody = SKPhysicsBody(edgeLoopFrom: bodyFrame)
         magneticField.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2 + bottomOffset / 2 - topOffset)
     }
-    
+
     override open func addChild(_ node: SKNode) {
         if node is CSBubbleNode {
             var x = CGFloat.random(min: -bottomOffset, max: -node.frame.size.width)
@@ -48,7 +48,7 @@ open class CSBubblesScene: CSFloatingCollectionScene {
                 min: frame.size.height - bottomOffset - node.frame.size.height,
                 max: frame.size.height - topOffset - node.frame.size.height
             )
-            
+
             if floatingNodes.count % 2 == 0 || floatingNodes.isEmpty {
                 x = CGFloat.random(
                     min: frame.size.width + node.frame.size.width,
@@ -59,12 +59,12 @@ open class CSBubblesScene: CSFloatingCollectionScene {
         }
         super.addChild(node)
     }
-    
+
     func performCommitSelectionAnimation() {
         physicsWorld.speed = 0
         let sortedNodes = sortedFloatingNodes()
         var actions: [SKAction] = []
-        
+
         for node in sortedNodes! {
             node.physicsBody = nil
             let action = actionForFloatingNode(node)
@@ -72,7 +72,7 @@ open class CSBubblesScene: CSFloatingCollectionScene {
         }
         run(SKAction.sequence(actions))
     }
-    
+
     func throwNode(_ node: SKNode, toPoint: CGPoint, completion block: (() -> Void)!) {
         node.removeAllActions()
         let movingXAction = SKAction.moveTo(x: toPoint.x, duration: 0.2)
@@ -81,7 +81,7 @@ open class CSBubblesScene: CSFloatingCollectionScene {
         let throwAction = SKAction.group([movingXAction, movingYAction, resize])
         node.run(throwAction)
     }
-    
+
     func sortedFloatingNodes() -> [CSFloatingNode]! {
         let sortedNodes = floatingNodes.sorted { (node: CSFloatingNode, nextNode: CSFloatingNode) -> Bool in
             let distance = distanceBetweenPoints(node.position, secondPoint: self.magneticField.position)
@@ -90,7 +90,7 @@ open class CSBubblesScene: CSFloatingCollectionScene {
         }
         return sortedNodes
     }
-    
+
     func actionForFloatingNode(_ node: CSFloatingNode!) -> SKAction {
         let action = SKAction.run({ () -> Void in
             if let index = self.floatingNodes.index(of: node) {
