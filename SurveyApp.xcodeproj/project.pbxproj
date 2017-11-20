@@ -15,10 +15,11 @@
 		E38EDE6B1FC2EA8400DA11FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38EDE691FC2EA8400DA11FB /* LaunchScreen.storyboard */; };
 		E38EDE761FC2EA8400DA11FB /* SurveyAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38EDE751FC2EA8400DA11FB /* SurveyAppTests.swift */; };
 		E38EDE811FC2EA8400DA11FB /* SurveyAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38EDE801FC2EA8400DA11FB /* SurveyAppUITests.swift */; };
-		E3A699F51FC30D8C001B3D70 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F41FC30D8C001B3D70 /* GreenViewController.swift */; };
-		E3A699F71FC30D98001B3D70 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F61FC30D98001B3D70 /* RedViewController.swift */; };
+		E3A699F51FC30D8C001B3D70 /* FixedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */; };
+		E3A699F71FC30D98001B3D70 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */; };
 		E3A699F91FC30DF5001B3D70 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F81FC30DF5001B3D70 /* PageViewController.swift */; };
 		E3A699FB1FC31529001B3D70 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699FA1FC31529001B3D70 /* DataModel.swift */; };
+		E3A699FD1FC335C0001B3D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699FC1FC335C0001B3D70 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,13 @@
 		E38EDE7C1FC2EA8400DA11FB /* SurveyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38EDE801FC2EA8400DA11FB /* SurveyAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAppUITests.swift; sourceTree = "<group>"; };
 		E38EDE821FC2EA8400DA11FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3A699F41FC30D8C001B3D70 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
-		E3A699F61FC30D98001B3D70 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
+		E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedViewController.swift; sourceTree = "<group>"; };
+		E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
 		E3A699F81FC30DF5001B3D70 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E3A699FA1FC31529001B3D70 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		E3A699FC1FC335C0001B3D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "American Purpose.ttf"; path = "../../LOTW SurveyApp/American Purpose.ttf"; sourceTree = "<group>"; };
+		E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Futura LtCn BT Light.ttf"; path = "../../LOTW SurveyApp/Futura LtCn BT Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,16 +125,19 @@
 		E38EDE5F1FC2EA8400DA11FB /* SurveyApp */ = {
 			isa = PBXGroup;
 			children = (
+				E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */,
+				E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */,
 				E38EDE601FC2EA8400DA11FB /* AppDelegate.swift */,
 				E38EDE621FC2EA8400DA11FB /* ViewController.swift */,
 				E38EDE641FC2EA8400DA11FB /* Main.storyboard */,
 				E38EDE671FC2EA8400DA11FB /* Assets.xcassets */,
 				E38EDE691FC2EA8400DA11FB /* LaunchScreen.storyboard */,
 				E38EDE6C1FC2EA8400DA11FB /* Info.plist */,
-				E3A699F41FC30D8C001B3D70 /* GreenViewController.swift */,
-				E3A699F61FC30D98001B3D70 /* RedViewController.swift */,
+				E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */,
+				E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */,
 				E3A699F81FC30DF5001B3D70 /* PageViewController.swift */,
 				E3A699FA1FC31529001B3D70 /* DataModel.swift */,
+				E3A699FC1FC335C0001B3D70 /* Extensions.swift */,
 			);
 			path = SurveyApp;
 			sourceTree = "<group>";
@@ -352,12 +359,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A699F71FC30D98001B3D70 /* RedViewController.swift in Sources */,
+				E3A699F71FC30D98001B3D70 /* FloatingViewController.swift in Sources */,
 				E3A699F91FC30DF5001B3D70 /* PageViewController.swift in Sources */,
-				E3A699F51FC30D8C001B3D70 /* GreenViewController.swift in Sources */,
+				E3A699F51FC30D8C001B3D70 /* FixedViewController.swift in Sources */,
 				E38EDE631FC2EA8400DA11FB /* ViewController.swift in Sources */,
 				E38EDE611FC2EA8400DA11FB /* AppDelegate.swift in Sources */,
 				E3A699FB1FC31529001B3D70 /* DataModel.swift in Sources */,
+				E3A699FD1FC335C0001B3D70 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

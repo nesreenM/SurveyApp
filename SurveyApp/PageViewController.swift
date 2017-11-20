@@ -25,15 +25,15 @@ class PageViewController: UIPageViewController,SwipeDelegate {
     
    
     let vc1 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "RedViewController")
+        instantiateViewController(withIdentifier: "FloatingViewController")
     let vc4 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "RedViewController")
+        instantiateViewController(withIdentifier: "FloatingViewController")
     
     
     let vc2  = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "GreenViewController") as! GreenViewController
+        instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
     let vc3 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "GreenViewController") as! GreenViewController
+        instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
     
     var type : [UIViewController] = []
     var types = ["F","N","N","F","N","N","N","N","F","N"]
@@ -43,11 +43,11 @@ class PageViewController: UIPageViewController,SwipeDelegate {
         for vc in types {
             if vc == "F" {
                // 3 green
-                let v = self.newVc(name: "GreenViewController") as! GreenViewController
+                let v = self.newVc(name: "FixedViewController") as! FixedViewController
                 v.delegate = self
                 type.append(v)
             }else{
-                let v = self.newVc(name: "RedViewController") as! RedViewController
+                let v = self.newVc(name: "FloatingViewController") as! FloatingViewController
                 v.delegate = self
                type.append(v)
             }
@@ -57,9 +57,8 @@ class PageViewController: UIPageViewController,SwipeDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        dataSource = self
+//        dataSource = self
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],

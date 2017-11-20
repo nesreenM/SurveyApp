@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RedViewController.swift
 //  SurveyApp
 //
 //  Created by Nesreen Mamdouh on 11/20/17.
@@ -9,34 +9,43 @@
 import UIKit
 import Bubbles
 import SpriteKit
-class ViewController: UIViewController {
 
-    @IBOutlet weak var questionLabel: UILabel!
+class FloatingViewController: UIViewController {
+
+    @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var bubblesView: CSBubblesView!
+    @IBOutlet weak var questionEmoji: UIImageView!
+    @IBOutlet weak var question: UILabel!
+    
+    var delegate : SwipeDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        arrowImageView.addGestureRecognizer(tap)
+        arrowImageView.isUserInteractionEnabled = true
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasSelected), name: NSNotification.Name(rawValue: "BubbleWasSelected"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasDeselected), name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: nil)
-       
+        
         
     }
-
+    @objc func tapped() {
+    delegate?.swipedRight()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.bubblesView.dataArray = NSMutableArray(array: ["Argentina", "Aruba", "Australia", "Austria", "Bahamas","Argentina", "Aruba", "Australia", "Austria", "Bahamas","Argentina", "Aruba", "Waiters response time", "Cleaniness", "Food service"])
+       
+         self.bubblesView.dataArray = NSMutableArray(array: ["Food Flavor", "Food Variety", "Service", "Food Tempreture", "Seating Timing","Manager Greeting", "Waiters response time", "Cleaniness", "Food service"])
         
-
     }
     @objc func bubbleWasSelected(notification: NSNotification) {
         print(notification.object as! String)
-        questionLabel.text = ""
-
-        questionLabel.fadeTransition(0.8)
-        questionLabel.text = "Rate our waiters please"
+        
     }
     
     @objc func bubbleWasDeselected(notification: NSNotification) {
@@ -44,6 +53,3 @@ class ViewController: UIViewController {
     }
 
 }
-
-
-

@@ -8,10 +8,16 @@
 
 import UIKit
 
-class GreenViewController: UIViewController {
+class FixedViewController: UIViewController {
 
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var greatButton: UIButton!
+    @IBOutlet weak var goodButton: UIButton!
+    @IBOutlet weak var mehButton: UIButton!
+    @IBOutlet weak var badButton: UIButton!
+    @IBOutlet weak var terribleButton: UIButton!
+    
     var delegate : SwipeDelegate?
 
     override func viewDidLoad() {
@@ -22,6 +28,7 @@ class GreenViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
         arrowImageView.addGestureRecognizer(tap)
         arrowImageView.isUserInteractionEnabled = true
+        terribleButton.titleEdgeInsets = UIEdgeInsetsMake((terribleButton.imageView?.image?.size.height)!, 0, 0, 0)
 
     }
     @objc func tapped (){
