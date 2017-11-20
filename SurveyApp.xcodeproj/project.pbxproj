@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2353C00B8127728366646DC /* Pods_SurveyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADC585C7F6282D7FB2723A9 /* Pods_SurveyApp.framework */; };
 		E38EDE611FC2EA8400DA11FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38EDE601FC2EA8400DA11FB /* AppDelegate.swift */; };
 		E38EDE631FC2EA8400DA11FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38EDE621FC2EA8400DA11FB /* ViewController.swift */; };
 		E38EDE661FC2EA8400DA11FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E38EDE641FC2EA8400DA11FB /* Main.storyboard */; };
@@ -34,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ADC585C7F6282D7FB2723A9 /* Pods_SurveyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA6426C5F879C832EB96F86 /* Pods-SurveyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B6848FB6580888959509BE48 /* Pods-SurveyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp.release.xcconfig"; sourceTree = "<group>"; };
 		E38EDE5D1FC2EA8400DA11FB /* SurveyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E38EDE601FC2EA8400DA11FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E38EDE621FC2EA8400DA11FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2353C00B8127728366646DC /* Pods_SurveyApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		893D7AFD4B3065FBD450CD80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6426C5F879C832EB96F86 /* Pods-SurveyApp.debug.xcconfig */,
+				B6848FB6580888959509BE48 /* Pods-SurveyApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DE30C773EE41272070B1A80F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ADC585C7F6282D7FB2723A9 /* Pods_SurveyApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E38EDE541FC2EA8400DA11FB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				E38EDE741FC2EA8400DA11FB /* SurveyAppTests */,
 				E38EDE7F1FC2EA8400DA11FB /* SurveyAppUITests */,
 				E38EDE5E1FC2EA8400DA11FB /* Products */,
+				893D7AFD4B3065FBD450CD80 /* Pods */,
+				DE30C773EE41272070B1A80F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E38EDE851FC2EA8400DA11FB /* Build configuration list for PBXNativeTarget "SurveyApp" */;
 			buildPhases = (
+				565B30DCC80CA0A190D69872 /* [CP] Check Pods Manifest.lock */,
 				E38EDE591FC2EA8400DA11FB /* Sources */,
 				E38EDE5A1FC2EA8400DA11FB /* Frameworks */,
 				E38EDE5B1FC2EA8400DA11FB /* Resources */,
+				95414DD7A7843F851624CE28 /* [CP] Embed Pods Frameworks */,
+				6974785C1217A180E05D08AC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		565B30DCC80CA0A190D69872 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurveyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6974785C1217A180E05D08AC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95414DD7A7843F851624CE28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bubbles/Bubbles.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bubbles.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SurveyApp/Pods-SurveyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E38EDE591FC2EA8400DA11FB /* Sources */ = {
@@ -424,6 +505,7 @@
 		};
 		E38EDE861FC2EA8400DA11FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AA6426C5F879C832EB96F86 /* Pods-SurveyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +521,7 @@
 		};
 		E38EDE871FC2EA8400DA11FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6848FB6580888959509BE48 /* Pods-SurveyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

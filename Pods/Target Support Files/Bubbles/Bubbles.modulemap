@@ -1,0 +1,6 @@
+framework module Bubbles {
+  umbrella header "Bubbles-umbrella.h"
+
+  export *
+  module * { export * }
+}
