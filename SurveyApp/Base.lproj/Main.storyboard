@@ -162,7 +162,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pim-JR-Fz5">
                                         <rect key="frame" x="0.0" y="0.0" width="142.5" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-CA-F9d">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="terrible" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-CA-F9d">
                                                 <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="arQ-5f-Nqf"/>
@@ -194,7 +194,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hC-8V-AlH">
                                         <rect key="frame" x="158.5" y="0.0" width="142.5" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ6-cz-0rW">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="bad" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ6-cz-0rW">
                                                 <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <state key="normal" image="badEmoji"/>
@@ -223,7 +223,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMH-MY-es4">
                                         <rect key="frame" x="317" y="0.0" width="142" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMo-lz-mpF">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="meh" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMo-lz-mpF">
                                                 <rect key="frame" x="0.0" y="0.0" width="142" height="128"/>
                                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="mehEmoji"/>
@@ -252,7 +252,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-89-nPA">
                                         <rect key="frame" x="475" y="0.0" width="142.5" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-EQ-bVI">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="good" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-EQ-bVI">
                                                 <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
                                                 <state key="normal" image="goodEmoji"/>
                                                 <connections>
@@ -280,7 +280,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-Ee-sC4">
                                         <rect key="frame" x="633.5" y="0.0" width="142.5" height="180"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-XM-GDT">
+                                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="great" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-XM-GDT">
                                                 <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
                                                 <state key="normal" image="greatEmoji"/>
                                                 <connections>

@@ -58,12 +58,30 @@ class FixedViewController: UIViewController {
     
     @IBAction func selectedButton(_ sender: Any) {
         let btn = sender as! UIButton
-       
-//        btn.isHighlighted = true
-//        btn.isSelected = true
         btn.isSelected = !btn.isSelected
-    
-            choiceImageView.image = btn.imageView?.image
+        if btn.isSelected {
+            switch btn.restorationIdentifier {
+            case "terrible"?:
+                btn.imageView?.image = UIImage()
+                return
+            case "bad"?:
+                btn.imageView?.image = UIImage()
+                return
+            case "meh"?:
+                btn.imageView?.image = UIImage()
+                return
+            case "good"?:
+                btn.imageView?.image = UIImage()
+                return
+            case "great"?:
+                btn.imageView?.image = UIImage()
+                return
+                
+            default:
+                btn.imageView?.image = UIImage()
+            }
+        }
+        
        
 
     }

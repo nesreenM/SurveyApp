@@ -47,24 +47,24 @@ class PageViewController: UIPageViewController,SwipeDelegate {
         instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
     
     var type : [UIViewController] = []
-    var types = ["F","N","N","F","N","F","N"]
+    var typesArray = ["F","N","N","F","N","F","N"]
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order
-        for vc in types {
+        for vc in self.typesArray {
             if vc == "F" {
                // 3 green
                 let v = self.newVc(name: "FixedViewController") as! FixedViewController
                 v.delegate = self
-                type.append(v)
+                self.type.append(v)
             }else{
                 let v = self.newVc(name: "FloatingViewController") as! FloatingViewController
                 v.delegate = self
-               type.append(v)
+               self.type.append(v)
             }
         }
 
-        return type
+        return self.type
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
