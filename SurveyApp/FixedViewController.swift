@@ -59,28 +59,59 @@ class FixedViewController: UIViewController {
     @IBAction func selectedButton(_ sender: Any) {
         let btn = sender as! UIButton
         btn.isSelected = !btn.isSelected
-        if btn.isSelected {
+//        if btn.isSelected {
             switch btn.restorationIdentifier {
             case "terrible"?:
-                btn.imageView?.image = UIImage()
+                if btn.isSelected{
+                    btn.setImage(UIImage(named: "terrible"), for: .normal)
+
+                }else{
+                    btn.setImage(UIImage(named: "terribleEmoji"), for: .normal)
+
+                }
                 return
             case "bad"?:
-                btn.imageView?.image = UIImage()
+                if btn.isSelected{
+                    btn.setImage(UIImage(named: "bad"), for: .normal)
+                    
+                }else{
+                    btn.setImage(UIImage(named: "badEmoji"), for: .normal)
+                    
+                }
                 return
             case "meh"?:
-                btn.imageView?.image = UIImage()
+                if btn.isSelected{
+                    btn.setImage(UIImage(named: "meh"), for: .normal)
+                    
+                }else{
+                    btn.setImage(UIImage(named: "mehEmoji"), for: .normal)
+                    
+                }
                 return
             case "good"?:
-                btn.imageView?.image = UIImage()
+                if btn.isSelected{
+                    btn.setImage(UIImage(named: "good"), for: .normal)
+
+                    
+                }else{
+                    btn.setImage(UIImage(named: "goodEmoji"), for: .normal)
+                }
                 return
             case "great"?:
-                btn.imageView?.image = UIImage()
+                if btn.isSelected{
+                    btn.setImage(UIImage(named: "great"), for: .normal)
+                    
+                }else{
+                    btn.setImage(UIImage(named: "greatEmoji"), for: .normal)
+
+                    
+                }
                 return
                 
             default:
                 btn.imageView?.image = UIImage()
             }
-        }
+//        }
         
        
 
