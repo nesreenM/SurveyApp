@@ -75,8 +75,8 @@ open class CSBubblesScene: CSFloatingCollectionScene {
 
     func throwNode(_ node: SKNode, toPoint: CGPoint, completion block: (() -> Void)!) {
         node.removeAllActions()
-        let movingXAction = SKAction.moveTo(x: toPoint.x, duration: 0.2)
-        let movingYAction = SKAction.moveTo(y: toPoint.y, duration: 0.4)
+        let movingXAction = SKAction.moveTo(x: toPoint.x, duration: 0.1)
+        let movingYAction = SKAction.moveTo(y: toPoint.y, duration: 0.2)
         let resize = SKAction.scale(to: 0.3, duration: 0.4)
         let throwAction = SKAction.group([movingXAction, movingYAction, resize])
         node.run(throwAction)

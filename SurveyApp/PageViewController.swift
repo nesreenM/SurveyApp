@@ -11,13 +11,24 @@ import UIKit
 class PageViewController: UIPageViewController,SwipeDelegate {
     var currentIndex = 0
     func swipedLeft() {
-        
+        print("Swiped left" , currentIndex)
+        //        viewControllers
+        if currentIndex > 0 {
+            currentIndex -= 1
+
+        }
+        if currentIndex > -1 {
+            self.setViewControllers([orderedViewControllers[currentIndex]], direction: .reverse, animated: true, completion: nil)
+        }
     }
     
     func swipedRight() {
         print("Swiped right" , currentIndex)
 //        viewControllers
-        currentIndex += 1
+        if currentIndex < orderedViewControllers.count - 1 {
+            currentIndex += 1
+
+        }
         if currentIndex < orderedViewControllers.count {
             self.setViewControllers([orderedViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
         }
@@ -36,7 +47,7 @@ class PageViewController: UIPageViewController,SwipeDelegate {
         instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
     
     var type : [UIViewController] = []
-    var types = ["F","N","N","F","N","N","N","N","F","N"]
+    var types = ["F","N","N","F","N","F","N"]
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order

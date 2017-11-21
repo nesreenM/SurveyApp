@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,10 +34,10 @@
 
 /* Begin PBXFileReference section */
 		0C0C303BC962549EF45A45A0E1B8F6E4 /* CSFloatingNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSFloatingNode.swift; path = Bubbles/CSFloatingNode.swift; sourceTree = "<group>"; };
-		199B39B39399B7F09FD2C65893E93755 /* Bubbles.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Bubbles.podspec; path = Bubbles/Bubbles.podspec; sourceTree = "<group>"; };
+		199B39B39399B7F09FD2C65893E93755 /* Bubbles.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Bubbles.podspec; path = Bubbles/Bubbles.podspec; sourceTree = "<group>"; };
 		2E984C1B8A91015DA5B6D564A0855E7E /* Pods-SurveyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurveyApp.release.xcconfig"; sourceTree = "<group>"; };
 		48837DEA02BAF173B566651651579F25 /* Pods-SurveyApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurveyApp-resources.sh"; sourceTree = "<group>"; };
-		642EA449B06BF5A8496A47E667E812CF /* Pods-SurveyApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SurveyApp.modulemap"; sourceTree = "<group>"; };
+		642EA449B06BF5A8496A47E667E812CF /* Pods-SurveyApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SurveyApp.modulemap"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		69AFA7E5C549A7BFCC5FFB0E599482C9 /* Pods-SurveyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SurveyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0851B94129BAD2B52C3961917C8413 /* Pods-SurveyApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SurveyApp-frameworks.sh"; sourceTree = "<group>"; };
@@ -45,17 +45,17 @@
 		814D1793CE55F0EE900E1DE842EA9F79 /* SKLabelNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKLabelNode+Extensions.swift"; path = "Bubbles/SKLabelNode+Extensions.swift"; sourceTree = "<group>"; };
 		850AE32EF75AFE62C44793D96D46BBC5 /* Bubbles-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Bubbles-dummy.m"; sourceTree = "<group>"; };
 		8F206F0732586C6FED6D1A51471455A2 /* Bubbles.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Bubbles.xcconfig; sourceTree = "<group>"; };
-		935BDC1DDDC13588DB87BF805FD23812 /* Bubbles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Bubbles.framework; path = Bubbles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		935BDC1DDDC13588DB87BF805FD23812 /* Bubbles.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bubbles.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5375BF6576195F94B01D49673A04121 /* Pods-SurveyApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SurveyApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		B1AA9EC6E37ED0AA7CB1EBCAA72C28E5 /* Bubbles-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bubbles-umbrella.h"; sourceTree = "<group>"; };
 		B1FB3B319B5E0B5B43241257CD9814E9 /* Pods-SurveyApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SurveyApp-umbrella.h"; sourceTree = "<group>"; };
 		B3D6F73E11D6ACF62ED216609E28C1BC /* Pods-SurveyApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SurveyApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B556BD4FB94B4B976902339AFF2BB7B7 /* CSBubbleNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSBubbleNode.swift; path = Bubbles/CSBubbleNode.swift; sourceTree = "<group>"; };
-		C5126E5CA94D3944033F9BEF1A2DDAD0 /* Bubbles.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Bubbles.modulemap; sourceTree = "<group>"; };
+		C5126E5CA94D3944033F9BEF1A2DDAD0 /* Bubbles.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Bubbles.modulemap; sourceTree = "<group>"; };
 		D3F1933713B8C8059D06CFC6BA49A54D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7BFFA7B153535C6B4BAABBBB4428852 /* CSFloatingCollectionScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSFloatingCollectionScene.swift; path = Bubbles/CSFloatingCollectionScene.swift; sourceTree = "<group>"; };
-		E0AD27FFE048F6F48E6053058C66AC22 /* Pods_SurveyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SurveyApp.framework; path = "Pods-SurveyApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0AD27FFE048F6F48E6053058C66AC22 /* Pods_SurveyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AEE15D32A38B659593C80E8BF2F706 /* Pods-SurveyApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SurveyApp-dummy.m"; sourceTree = "<group>"; };
 		EDD510E4F8B99C28125F56B835FF865E /* CSBubblesView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSBubblesView.swift; path = Bubbles/CSBubblesView.swift; sourceTree = "<group>"; };
 		F0FF9D90553C1464935F6AAC9EA3DBC4 /* Bubbles-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bubbles-prefix.pch"; sourceTree = "<group>"; };
@@ -154,7 +154,6 @@
 				814D1793CE55F0EE900E1DE842EA9F79 /* SKLabelNode+Extensions.swift */,
 				26294E62803DA798E82C9EF72492307E /* Support Files */,
 			);
-			name = Bubbles;
 			path = Bubbles;
 			sourceTree = "<group>";
 		};
@@ -318,7 +317,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bubbles/Bubbles-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bubbles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Bubbles/Bubbles.modulemap";
 				PRODUCT_NAME = Bubbles;
@@ -405,7 +404,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Bubbles/Bubbles-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Bubbles/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Bubbles/Bubbles.modulemap";
 				PRODUCT_NAME = Bubbles;

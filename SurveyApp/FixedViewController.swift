@@ -10,6 +10,7 @@ import UIKit
 
 class FixedViewController: UIViewController {
 
+    @IBOutlet weak var leftArrowImage: UIImageView!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var greatButton: UIButton!
@@ -18,22 +19,30 @@ class FixedViewController: UIViewController {
     @IBOutlet weak var badButton: UIButton!
     @IBOutlet weak var terribleButton: UIButton!
     
+    @IBOutlet weak var choiceImageView: UIImageView!
     var delegate : SwipeDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            label.text = DataModel.sharedInstance.questionsGreen[DataModel.sharedInstance.currentIndexGreen]
-            DataModel.sharedInstance.currentIndexGreen += 1
+//            label.text = DataModel.sharedInstance.questionsGreen[DataModel.sharedInstance.currentIndexGreen]
+//            DataModel.sharedInstance.currentIndexGreen += 1
         // Do any additional setup after loading the view.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        arrowImageView.addGestureRecognizer(tap)
+        let rightTappedGesture = UITapGestureRecognizer(target: self, action: #selector(rightTapped))
+        arrowImageView.addGestureRecognizer(rightTappedGesture)
         arrowImageView.isUserInteractionEnabled = true
         
+        let leftTappedGesture = UITapGestureRecognizer(target: self, action: #selector(leftTapped))
+
+        leftArrowImage.addGestureRecognizer(leftTappedGesture)
+        leftArrowImage.isUserInteractionEnabled = true
 
     }
-    @objc func tapped (){
+    @objc func rightTapped (){
         delegate?.swipedRight()
 
+    }
+    @objc func leftTapped(){
+        delegate?.swipedLeft()
     }
     
 
@@ -45,48 +54,18 @@ class FixedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
 
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    @IBAction func selectedButton(_ sender: Any) {
+        let btn = sender as! UIButton
+       
+//        btn.isHighlighted = true
+//        btn.isSelected = true
+        btn.isSelected = !btn.isSelected
+    
+            choiceImageView.image = btn.imageView?.image
+       
 
-}
-extension UIButton {
-    
-    func centerVertically(padding: CGFloat = 16) {
-        guard
-            let imageViewSize = self.imageView?.frame.size,
-            let titleLabelSize = self.titleLabel?.frame.size else {
-                return
-        }
-        
-        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
-        
-        self.imageEdgeInsets = UIEdgeInsets(
-            top: 0,
-            left: 10.0,
-            bottom: (titleLabelSize.height+padding) ,
-            right:10
-        )
-        
-        self.titleEdgeInsets = UIEdgeInsets(
-            top: 10,
-            left: 0,
-            bottom: -(totalHeight-titleLabelSize.height),
-            right: 0.0
-        )
-        
-        self.contentEdgeInsets = UIEdgeInsets(
-            top: 0.0,
-            left: 0.0,
-            bottom: 0,
-            right: 0.0
-        )
     }
-    
 }
+

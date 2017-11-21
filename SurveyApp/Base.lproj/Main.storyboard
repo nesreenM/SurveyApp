@@ -106,6 +106,7 @@
                     <connections>
                         <outlet property="arrowImageView" destination="Zwv-fe-ljB" id="Rbb-Wi-BYR"/>
                         <outlet property="bubblesView" destination="JaX-J1-FJa" id="wDq-et-EbF"/>
+                        <outlet property="leftArrow" destination="fOo-gV-pMc" id="Otg-JX-v0w"/>
                         <outlet property="question" destination="17R-pm-MEE" id="HEA-sK-qWU"/>
                         <outlet property="questionEmoji" destination="Qjo-gt-OW1" id="7ot-kT-UAb"/>
                     </connections>
@@ -155,105 +156,166 @@
                                     <constraint firstAttribute="width" constant="200" id="WN5-qm-ygA"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Lob-wp-weM">
-                                <rect key="frame" x="124" y="334.5" width="776" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Kyg-v0-0gO">
+                                <rect key="frame" x="124" y="334.5" width="776" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvD-4t-97W">
-                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pim-JR-Fz5">
+                                        <rect key="frame" x="0.0" y="0.0" width="142.5" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2b4-CA-F9d">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="arQ-5f-Nqf"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="terribleEmoji"/>
+                                                <connections>
+                                                    <action selector="selectedButton:" destination="pDG-Jx-ldm" eventType="touchUpInside" id="I4s-vi-Y7m"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terrible" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwj-q4-M9E">
+                                                <rect key="frame" x="0.0" y="136" width="142.5" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="69C-Oy-Ehq"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cwj-q4-M9E" secondAttribute="bottom" id="9p0-1d-1G3"/>
+                                            <constraint firstItem="Cwj-q4-M9E" firstAttribute="top" secondItem="2b4-CA-F9d" secondAttribute="bottom" constant="8" id="IlW-Sr-4yn"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cwj-q4-M9E" secondAttribute="trailing" id="Kkk-Ww-lxf"/>
+                                            <constraint firstItem="2b4-CA-F9d" firstAttribute="leading" secondItem="pim-JR-Fz5" secondAttribute="leading" id="M2G-JO-jAY"/>
+                                            <constraint firstItem="2b4-CA-F9d" firstAttribute="top" secondItem="pim-JR-Fz5" secondAttribute="top" id="Rzq-gW-A83"/>
+                                            <constraint firstAttribute="height" constant="180" id="f2f-jb-67P"/>
+                                            <constraint firstAttribute="trailing" secondItem="2b4-CA-F9d" secondAttribute="trailing" id="mm3-2T-usn"/>
+                                            <constraint firstItem="Cwj-q4-M9E" firstAttribute="leading" secondItem="pim-JR-Fz5" secondAttribute="leading" id="zNk-I6-4bT"/>
                                         </constraints>
-                                        <inset key="titleEdgeInsets" minX="-215" minY="0.0" maxX="0.0" maxY="-112"/>
-                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="20"/>
-                                        <state key="normal" image="greatEmoji">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Great">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="Futura-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GpG-yK-Fm5">
-                                        <rect key="frame" x="158.5" y="0.0" width="142.5" height="128"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hC-8V-AlH">
+                                        <rect key="frame" x="158.5" y="0.0" width="142.5" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQ6-cz-0rW">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" image="badEmoji"/>
+                                                <connections>
+                                                    <action selector="selectedButton:" destination="pDG-Jx-ldm" eventType="touchUpInside" id="p8H-80-tKM"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYq-xJ-FsX">
+                                                <rect key="frame" x="0.0" y="136" width="142.5" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="5w9-pO-dUX"/>
+                                            <constraint firstAttribute="trailing" secondItem="cQ6-cz-0rW" secondAttribute="trailing" id="0Vb-C1-hwx"/>
+                                            <constraint firstItem="cQ6-cz-0rW" firstAttribute="leading" secondItem="8hC-8V-AlH" secondAttribute="leading" id="BIU-AF-Xld"/>
+                                            <constraint firstItem="lYq-xJ-FsX" firstAttribute="top" secondItem="cQ6-cz-0rW" secondAttribute="bottom" constant="8" id="O21-Jg-OiG"/>
+                                            <constraint firstAttribute="trailing" secondItem="lYq-xJ-FsX" secondAttribute="trailing" id="TaU-gX-efC"/>
+                                            <constraint firstItem="lYq-xJ-FsX" firstAttribute="leading" secondItem="8hC-8V-AlH" secondAttribute="leading" id="UNH-5K-smu"/>
+                                            <constraint firstItem="cQ6-cz-0rW" firstAttribute="top" secondItem="8hC-8V-AlH" secondAttribute="top" id="o5M-Pl-BjN"/>
+                                            <constraint firstAttribute="bottom" secondItem="lYq-xJ-FsX" secondAttribute="bottom" id="wmE-Xc-9wt"/>
                                         </constraints>
-                                        <inset key="titleEdgeInsets" minX="-215" minY="0.0" maxX="0.0" maxY="-112"/>
-                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="20"/>
-                                        <state key="normal" image="goodEmoji">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Good">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="Futura-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="149-t8-5Le">
-                                        <rect key="frame" x="317" y="0.0" width="142" height="128"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMH-MY-es4">
+                                        <rect key="frame" x="317" y="0.0" width="142" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMo-lz-mpF">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="128"/>
+                                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="mehEmoji"/>
+                                                <connections>
+                                                    <action selector="selectedButton:" destination="pDG-Jx-ldm" eventType="touchUpInside" id="gb9-JU-LZK"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztL-oN-weO">
+                                                <rect key="frame" x="0.0" y="136" width="142" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="GUB-kb-iK2"/>
+                                            <constraint firstAttribute="bottom" secondItem="ztL-oN-weO" secondAttribute="bottom" id="30d-Fm-mjO"/>
+                                            <constraint firstItem="ztL-oN-weO" firstAttribute="leading" secondItem="WMH-MY-es4" secondAttribute="leading" id="4ZP-vY-cQK"/>
+                                            <constraint firstItem="wMo-lz-mpF" firstAttribute="top" secondItem="WMH-MY-es4" secondAttribute="top" id="61y-fP-BWc"/>
+                                            <constraint firstItem="wMo-lz-mpF" firstAttribute="leading" secondItem="WMH-MY-es4" secondAttribute="leading" id="8cM-kc-eds"/>
+                                            <constraint firstAttribute="trailing" secondItem="wMo-lz-mpF" secondAttribute="trailing" id="f6b-Ph-DwB"/>
+                                            <constraint firstAttribute="trailing" secondItem="ztL-oN-weO" secondAttribute="trailing" id="pwE-8k-vtl"/>
+                                            <constraint firstItem="ztL-oN-weO" firstAttribute="top" secondItem="wMo-lz-mpF" secondAttribute="bottom" constant="8" id="zvj-rg-Rmz"/>
                                         </constraints>
-                                        <inset key="titleEdgeInsets" minX="-215" minY="0.0" maxX="0.0" maxY="-112"/>
-                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="20"/>
-                                        <state key="normal" image="mehEmoji">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Meh">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="Futura-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ntq-9g-MaP">
-                                        <rect key="frame" x="475" y="0.0" width="142.5" height="128"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cyL-89-nPA">
+                                        <rect key="frame" x="475" y="0.0" width="142.5" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqH-EQ-bVI">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
+                                                <state key="normal" image="goodEmoji"/>
+                                                <connections>
+                                                    <action selector="selectedButton:" destination="pDG-Jx-ldm" eventType="touchUpInside" id="jQA-ZC-iMV"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-dq-xP0">
+                                                <rect key="frame" x="0.0" y="136" width="142.5" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="a7E-yr-iIp"/>
+                                            <constraint firstItem="hrA-dq-xP0" firstAttribute="leading" secondItem="cyL-89-nPA" secondAttribute="leading" id="1py-kx-uA6"/>
+                                            <constraint firstAttribute="bottom" secondItem="hrA-dq-xP0" secondAttribute="bottom" id="4bv-aE-Og2"/>
+                                            <constraint firstItem="hrA-dq-xP0" firstAttribute="top" secondItem="SqH-EQ-bVI" secondAttribute="bottom" constant="8" id="KfM-FS-lVb"/>
+                                            <constraint firstAttribute="trailing" secondItem="SqH-EQ-bVI" secondAttribute="trailing" id="Rvv-mn-JH5"/>
+                                            <constraint firstItem="SqH-EQ-bVI" firstAttribute="leading" secondItem="cyL-89-nPA" secondAttribute="leading" id="a3a-dA-FAg"/>
+                                            <constraint firstAttribute="trailing" secondItem="hrA-dq-xP0" secondAttribute="trailing" id="d3A-5y-iDm"/>
+                                            <constraint firstItem="SqH-EQ-bVI" firstAttribute="top" secondItem="cyL-89-nPA" secondAttribute="top" id="ew3-9n-2eC"/>
                                         </constraints>
-                                        <inset key="titleEdgeInsets" minX="-156" minY="0.0" maxX="0.0" maxY="-112"/>
-                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="20"/>
-                                        <state key="normal" image="badEmoji">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Bad">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="Futura-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myh-lI-Xt6">
-                                        <rect key="frame" x="633.5" y="0.0" width="142.5" height="128"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydt-Ee-sC4">
+                                        <rect key="frame" x="633.5" y="0.0" width="142.5" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXY-XM-GDT">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="128"/>
+                                                <state key="normal" image="greatEmoji"/>
+                                                <connections>
+                                                    <action selector="selectedButton:" destination="pDG-Jx-ldm" eventType="touchUpInside" id="tob-vZ-yu8"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0v-fn-pKo">
+                                                <rect key="frame" x="0.0" y="136" width="142.5" height="44"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="F2Q-dR-cL7"/>
+                                            <constraint firstAttribute="trailing" secondItem="HXY-XM-GDT" secondAttribute="trailing" id="3Yn-D7-At8"/>
+                                            <constraint firstItem="Z0v-fn-pKo" firstAttribute="leading" secondItem="ydt-Ee-sC4" secondAttribute="leading" id="3ah-dT-LoZ"/>
+                                            <constraint firstItem="HXY-XM-GDT" firstAttribute="top" secondItem="ydt-Ee-sC4" secondAttribute="top" id="7hu-4T-WSU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Z0v-fn-pKo" secondAttribute="trailing" id="Fhv-gR-LaZ"/>
+                                            <constraint firstItem="Z0v-fn-pKo" firstAttribute="top" secondItem="HXY-XM-GDT" secondAttribute="bottom" constant="8" id="NoI-X9-rxK"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z0v-fn-pKo" secondAttribute="bottom" id="RQk-ke-qWZ"/>
+                                            <constraint firstItem="HXY-XM-GDT" firstAttribute="leading" secondItem="ydt-Ee-sC4" secondAttribute="leading" id="Um3-CH-M8c"/>
                                         </constraints>
-                                        <inset key="titleEdgeInsets" minX="-156" minY="0.0" maxX="0.0" maxY="-112"/>
-                                        <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="20"/>
-                                        <state key="normal" image="terribleEmoji">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Terrible">
-                                                    <attributes>
-                                                        <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="Futura-Medium"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                        </state>
-                                    </button>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="2b4-CA-F9d" firstAttribute="height" secondItem="cQ6-cz-0rW" secondAttribute="height" id="2Oz-yd-3cX"/>
+                                    <constraint firstItem="pim-JR-Fz5" firstAttribute="height" secondItem="8hC-8V-AlH" secondAttribute="height" id="IQs-ru-fBN"/>
+                                    <constraint firstItem="pim-JR-Fz5" firstAttribute="height" secondItem="ydt-Ee-sC4" secondAttribute="height" id="M8k-pk-Rxx"/>
+                                    <constraint firstItem="2b4-CA-F9d" firstAttribute="height" secondItem="SqH-EQ-bVI" secondAttribute="height" id="Tr6-jb-XKf"/>
+                                    <constraint firstItem="2b4-CA-F9d" firstAttribute="height" secondItem="wMo-lz-mpF" secondAttribute="height" id="VM7-Pf-ySJ"/>
+                                    <constraint firstItem="pim-JR-Fz5" firstAttribute="height" secondItem="cyL-89-nPA" secondAttribute="height" id="Vce-8g-QV8"/>
+                                    <constraint firstItem="pim-JR-Fz5" firstAttribute="height" secondItem="WMH-MY-es4" secondAttribute="height" id="ZaM-ny-D1c"/>
+                                    <constraint firstItem="2b4-CA-F9d" firstAttribute="height" secondItem="HXY-XM-GDT" secondAttribute="height" id="vjo-TV-nD8"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -261,34 +323,31 @@
                             <constraint firstItem="kFk-8K-wBF" firstAttribute="centerY" secondItem="He1-nk-v4x" secondAttribute="centerY" id="2SZ-Xw-9oU"/>
                             <constraint firstItem="VrR-B4-L6d" firstAttribute="centerX" secondItem="He1-nk-v4x" secondAttribute="centerX" id="2WU-Y8-ZG9"/>
                             <constraint firstItem="k3N-xJ-Fjd" firstAttribute="centerX" secondItem="He1-nk-v4x" secondAttribute="centerX" id="2n1-8h-ONO"/>
-                            <constraint firstItem="Lob-wp-weM" firstAttribute="leading" secondItem="EwS-y8-Uyg" secondAttribute="trailing" constant="24" id="C7E-Vn-RfR"/>
                             <constraint firstItem="EwS-y8-Uyg" firstAttribute="width" secondItem="kFk-8K-wBF" secondAttribute="width" id="Gte-ts-Jex"/>
                             <constraint firstItem="yU7-3n-nbS" firstAttribute="top" secondItem="cjS-Xe-Tyx" secondAttribute="top" constant="-20" id="I78-ym-RrU"/>
                             <constraint firstItem="EwS-y8-Uyg" firstAttribute="leading" secondItem="cjS-Xe-Tyx" secondAttribute="leading" constant="20" id="L1D-Z4-zSF"/>
                             <constraint firstItem="cjS-Xe-Tyx" firstAttribute="bottom" secondItem="5cX-LF-XOq" secondAttribute="bottom" constant="20" id="Mzf-pi-1S1"/>
                             <constraint firstItem="kFk-8K-wBF" firstAttribute="centerY" secondItem="He1-nk-v4x" secondAttribute="centerY" id="PNW-0h-JSt"/>
                             <constraint firstItem="EwS-y8-Uyg" firstAttribute="height" secondItem="kFk-8K-wBF" secondAttribute="height" id="Rh4-uf-pyw"/>
+                            <constraint firstItem="kFk-8K-wBF" firstAttribute="leading" secondItem="Kyg-v0-0gO" secondAttribute="trailing" constant="24" id="X1o-m2-1y3"/>
                             <constraint firstItem="cjS-Xe-Tyx" firstAttribute="trailing" secondItem="kFk-8K-wBF" secondAttribute="trailing" constant="20" id="Y8C-PO-ISr"/>
                             <constraint firstItem="cjS-Xe-Tyx" firstAttribute="trailing" secondItem="yU7-3n-nbS" secondAttribute="trailing" id="ZBS-0H-U3p"/>
+                            <constraint firstItem="Kyg-v0-0gO" firstAttribute="leading" secondItem="EwS-y8-Uyg" secondAttribute="trailing" constant="24" id="aLj-G8-2Jc"/>
                             <constraint firstItem="EwS-y8-Uyg" firstAttribute="centerY" secondItem="He1-nk-v4x" secondAttribute="centerY" id="bq4-UW-nTi"/>
                             <constraint firstItem="k3N-xJ-Fjd" firstAttribute="top" secondItem="VrR-B4-L6d" secondAttribute="bottom" constant="24" id="bwy-sv-U0a"/>
                             <constraint firstItem="k3N-xJ-Fjd" firstAttribute="leading" secondItem="cjS-Xe-Tyx" secondAttribute="leading" constant="98" id="fwM-bW-u5f"/>
                             <constraint firstItem="cjS-Xe-Tyx" firstAttribute="bottom" secondItem="yU7-3n-nbS" secondAttribute="bottom" id="iqe-Rg-jvI"/>
-                            <constraint firstItem="kFk-8K-wBF" firstAttribute="leading" secondItem="Lob-wp-weM" secondAttribute="trailing" constant="24" id="nib-lT-8dU"/>
                             <constraint firstItem="5cX-LF-XOq" firstAttribute="leading" secondItem="cjS-Xe-Tyx" secondAttribute="leading" constant="20" id="pFA-CF-pIq"/>
                             <constraint firstItem="yU7-3n-nbS" firstAttribute="leading" secondItem="cjS-Xe-Tyx" secondAttribute="leading" id="uja-yJ-HGv"/>
-                            <constraint firstItem="Lob-wp-weM" firstAttribute="top" secondItem="k3N-xJ-Fjd" secondAttribute="bottom" constant="24" id="vrA-YE-O9m"/>
+                            <constraint firstItem="Kyg-v0-0gO" firstAttribute="top" secondItem="k3N-xJ-Fjd" secondAttribute="bottom" constant="24" id="zh7-yW-2hC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cjS-Xe-Tyx"/>
                     </view>
                     <connections>
                         <outlet property="arrowImageView" destination="kFk-8K-wBF" id="gFv-Fw-cwa"/>
-                        <outlet property="badButton" destination="ntq-9g-MaP" id="Ftf-17-NEn"/>
-                        <outlet property="goodButton" destination="GpG-yK-Fm5" id="5K6-2G-13c"/>
-                        <outlet property="greatButton" destination="lvD-4t-97W" id="APx-8x-rPl"/>
+                        <outlet property="choiceImageView" destination="VrR-B4-L6d" id="tnn-3q-fKC"/>
                         <outlet property="label" destination="k3N-xJ-Fjd" id="IdX-Hm-dbC"/>
-                        <outlet property="mehButton" destination="149-t8-5Le" id="FAF-wO-zAf"/>
-                        <outlet property="terribleButton" destination="myh-lI-Xt6" id="hfu-E0-5uN"/>
+                        <outlet property="leftArrowImage" destination="EwS-y8-Uyg" id="Eee-H6-LbP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-LU-D6H" userLabel="First Responder" sceneMemberID="firstResponder"/>

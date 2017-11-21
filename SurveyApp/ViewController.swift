@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bubblesView: CSBubblesView!
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         // Do any additional setup after loading the view, typically from a nib.
         NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasSelected), name: NSNotification.Name(rawValue: "BubbleWasSelected"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasDeselected), name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: nil)

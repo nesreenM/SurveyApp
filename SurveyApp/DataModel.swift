@@ -13,7 +13,7 @@ class DataModel {
 
     var currentIndexGreen = 0
     var currentIndexRed = 0
-
+    var choices = NSMutableArray(array: ["Food Flavor", "Food Variety", "Service", "Food Tempreture", "Seating Timing","Manager Greeting", "Waiters response time", "Cleaniness", "Food service"])
     var questionsGreen = ["Whats up?" , "How was the food?" , "Marry Me"]
     var questionsRed = ["FUck you" , "YAY"]
     private init(){

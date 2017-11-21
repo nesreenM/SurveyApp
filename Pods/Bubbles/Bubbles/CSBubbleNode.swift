@@ -13,8 +13,8 @@ import SpriteKit
 //import CSFloatingCollection
 
 open class CSBubbleNode: CSFloatingNode {
-    var labelNode = SKLabelNode(fontNamed: "Arial")
-    var messageNode = SKLabelNode(fontNamed: "Arial")
+    var labelNode = SKLabelNode(fontNamed: "Futura")
+    var messageNode = SKLabelNode(fontNamed: "Futura")
     var message : String!
     var primaryColor : SKColor! {
         didSet {
@@ -73,14 +73,20 @@ open class CSBubbleNode: CSFloatingNode {
 
     override open func selectingAnimation() -> SKAction? {
         removeAction(forKey: CSBubbleNode.removingKey)
-
+        var nodeText = ""
         for children in self.messageNode.children {
             if children.name == "innerLabel" {
                 let childNodeLabel = children as! SKLabelNode
                 childNodeLabel.fontColor = secondaryColor
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BubbleWasSelected"), object: childNodeLabel.text)
+                nodeText += "\(childNodeLabel.text!) "
+                
             }
         }
+        if nodeText != ""{
+            nodeText.removeLast()
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BubbleWasSelected"), object: nodeText)
+        }
+        
 
         self.fillColor = self.primaryColor
         self.strokeColor = self.primaryColor
@@ -90,12 +96,20 @@ open class CSBubbleNode: CSFloatingNode {
 
     override open func normalizeAnimation() -> SKAction? {
         removeAction(forKey: CSBubbleNode.removingKey)
+        var nodeText = ""
+
         for children in self.messageNode.children {
             if children.name == "innerLabel" {
                 let childNodeLabel = children as! SKLabelNode
                 childNodeLabel.fontColor = self.primaryColor
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: childNodeLabel.text)
+                nodeText += "\(childNodeLabel.text!) "
+
+               
             }
+        }
+        if nodeText != ""{
+            nodeText.removeLast()
+           NotificationCenter.default.post(name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: nodeText)
         }
 
         self.fillColor = secondaryColor
