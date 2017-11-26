@@ -82,7 +82,7 @@ class NetworkRequests
     func postResponse(questionId:Int,answerId:[Int],responseId:Int,sender:NetworkRequestsCompletionHandler){
        
         var jsonBody:[String:Any] = ["questionId":questionId]
-        jsonBody["answerId"] = answerId
+        jsonBody["answers"] = answerId
         jsonBody["responseId"] = responseId
 
         

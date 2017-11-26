@@ -26,19 +26,17 @@ class PageViewController: UIPageViewController,SwipeDelegate , NetworkRequestsCo
     
     func swipedRight() {
         print("Swiped right" , currentIndex, "orderedViewControllers.count " , orderedViewControllers.count)
-//        viewControllers
+        
         if currentIndex < orderedViewControllers.count - 1 {
             currentIndex += 1
 
-        }
-        if currentIndex < orderedViewControllers.count {
             self.setViewControllers([orderedViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
-        }
-        if currentIndex == 5{
+        }else{
             let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
             present(vc, animated: true, completion: nil)
-            
         }
+        // redirect to another controller after the last question
+        
 
     }
 

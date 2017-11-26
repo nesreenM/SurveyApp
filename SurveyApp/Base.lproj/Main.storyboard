@@ -361,7 +361,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundLotwLogo" translatesAutoresizingMaskIntoConstraints="NO" id="o3g-q8-Zhu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundLotwLogo" translatesAutoresizingMaskIntoConstraints="NO" id="o3g-q8-Zhu">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-Z6-bn3">
@@ -380,7 +380,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Awa-2a-0iT"/>
-                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dim-tG-laU"/>
+                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="Dim-tG-laU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o3g-q8-Zhu" secondAttribute="bottom" id="E3N-jP-hte"/>
                             <constraint firstItem="o3g-q8-Zhu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QMY-Nv-yOh"/>
                             <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QZY-DV-VZF"/>

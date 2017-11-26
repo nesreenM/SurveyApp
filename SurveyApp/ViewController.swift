@@ -31,6 +31,7 @@ class ViewController: UIViewController,NetworkRequestsCompletionHandler{
     func onCompleteUpdateView(_ methodName: String) {
         print("Success \(methodName)")
         
+        
     }
     
     func onErrorUpdateView(_ errorMessage: String, _ methodName: String) {
