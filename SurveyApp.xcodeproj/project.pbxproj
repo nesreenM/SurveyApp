@@ -20,8 +20,9 @@
 		E3A699F51FC30D8C001B3D70 /* FixedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */; };
 		E3A699F71FC30D98001B3D70 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */; };
 		E3A699F91FC30DF5001B3D70 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F81FC30DF5001B3D70 /* PageViewController.swift */; };
-		E3A699FB1FC31529001B3D70 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699FA1FC31529001B3D70 /* DataModel.swift */; };
-		E3A699FD1FC335C0001B3D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699FC1FC335C0001B3D70 /* Extensions.swift */; };
+		E3EAE1641FCAE56300B02967 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1631FCAE56300B02967 /* APIManager.swift */; };
+		E3EAE1661FCAE56A00B02967 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */; };
+		E3EAE1681FCAE68200B02967 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1671FCAE68200B02967 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +64,11 @@
 		E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedViewController.swift; sourceTree = "<group>"; };
 		E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingViewController.swift; sourceTree = "<group>"; };
 		E3A699F81FC30DF5001B3D70 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		E3A699FA1FC31529001B3D70 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		E3A699FC1FC335C0001B3D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "American Purpose.ttf"; path = "../../LOTW SurveyApp/American Purpose.ttf"; sourceTree = "<group>"; };
 		E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Futura LtCn BT Light.ttf"; path = "../../LOTW SurveyApp/Futura LtCn BT Light.ttf"; sourceTree = "<group>"; };
+		E3EAE1631FCAE56300B02967 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = ../../Everestminds/Do2rom/Ios_app/Do2rom/Do2rom/APIManager.swift; sourceTree = "<group>"; };
+		E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequests.swift; path = ../../Everestminds/Do2rom/Ios_app/Do2rom/Do2rom/NetworkRequests.swift; sourceTree = "<group>"; };
+		E3EAE1671FCAE68200B02967 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = ../../../.Trash/DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,16 +134,17 @@
 				E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */,
 				E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */,
 				E38EDE601FC2EA8400DA11FB /* AppDelegate.swift */,
+				E3EAE1631FCAE56300B02967 /* APIManager.swift */,
 				E38EDE621FC2EA8400DA11FB /* ViewController.swift */,
 				E38EDE641FC2EA8400DA11FB /* Main.storyboard */,
 				E38EDE671FC2EA8400DA11FB /* Assets.xcassets */,
+				E3EAE1671FCAE68200B02967 /* DataModel.swift */,
 				E38EDE691FC2EA8400DA11FB /* LaunchScreen.storyboard */,
 				E38EDE6C1FC2EA8400DA11FB /* Info.plist */,
+				E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */,
 				E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */,
 				E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */,
 				E3A699F81FC30DF5001B3D70 /* PageViewController.swift */,
-				E3A699FA1FC31529001B3D70 /* DataModel.swift */,
-				E3A699FC1FC335C0001B3D70 /* Extensions.swift */,
 				257EE4991FC346740063B424 /* Greetings.storyboard */,
 				257EE49B1FC34BE20063B424 /* GreetingViewController.swift */,
 			);
@@ -372,8 +375,9 @@
 				257EE49C1FC34BE20063B424 /* GreetingViewController.swift in Sources */,
 				E38EDE631FC2EA8400DA11FB /* ViewController.swift in Sources */,
 				E38EDE611FC2EA8400DA11FB /* AppDelegate.swift in Sources */,
-				E3A699FB1FC31529001B3D70 /* DataModel.swift in Sources */,
-				E3A699FD1FC335C0001B3D70 /* Extensions.swift in Sources */,
+				E3EAE1661FCAE56A00B02967 /* NetworkRequests.swift in Sources */,
+				E3EAE1641FCAE56300B02967 /* APIManager.swift in Sources */,
+				E3EAE1681FCAE68200B02967 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

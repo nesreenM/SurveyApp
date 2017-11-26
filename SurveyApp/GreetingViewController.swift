@@ -8,7 +8,8 @@
 
 import UIKit
 
-class GreetingViewController: UIViewController {
+class GreetingViewController: UIViewController,NetworkRequestsCompletionHandler {
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,19 @@ class GreetingViewController: UIViewController {
     }
     
     @IBAction func rateMe(_ sender: Any) {
+        
+        NetworkRequests().getActiveQuestions(sender: self)
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
         present(vc, animated: true, completion: nil)
         
     }
+    func onCompleteUpdateView(_ methodName: String) {
+        print("Success \(methodName)")
+    }
+    
+    func onErrorUpdateView(_ errorMessage: String, _ methodName: String) {
+        print("Error \(methodName) \(errorMessage)")
+    }
+   
+    
 }

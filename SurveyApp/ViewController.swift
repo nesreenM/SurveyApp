@@ -36,7 +36,6 @@ class ViewController: UIViewController {
         print(notification.object as! String)
         questionLabel.text = ""
 
-        questionLabel.fadeTransition(0.8)
         questionLabel.text = "Rate our waiters please"
     }
     
