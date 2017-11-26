@@ -21,12 +21,11 @@ class FixedViewController: UIViewController {
     
     @IBOutlet weak var choiceImageView: UIImageView!
     var delegate : SwipeDelegate?
-
+    var currentQuestionID = 0
+    var selectedAnswer = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-//            label.text = DataModel.sharedInstance.questionsGreen[DataModel.sharedInstance.currentIndexGreen]
-//            DataModel.sharedInstance.currentIndexGreen += 1
-        // Do any additional setup after loading the view.
+
         let rightTappedGesture = UITapGestureRecognizer(target: self, action: #selector(rightTapped))
         arrowImageView.addGestureRecognizer(rightTappedGesture)
         arrowImageView.isUserInteractionEnabled = true
@@ -35,6 +34,8 @@ class FixedViewController: UIViewController {
 
         leftArrowImage.addGestureRecognizer(leftTappedGesture)
         leftArrowImage.isUserInteractionEnabled = true
+        label.text = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.body
+
 
     }
     @objc func rightTapped (){
@@ -54,8 +55,32 @@ class FixedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
 
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        if (DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] != nil) {
+            DataModel.sharedInstance.questionAnswerTuple[currentQuestionID]?.append(
+                getAnswerByValue(value: selectedAnswer))
+        }else{
+            DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] =
+                [getAnswerByValue(value: selectedAnswer)]
+        }
+        
+        
+        
+        
+    }
 
+    func getAnswerByValue(value:Int) -> Int{
+        
+        let answers = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.answer
+        for answer in answers! {
+            if answer.value == value {
+                return answer.id
+            }
+        }
+        return 0
     
+    }
     @IBAction func selectedButton(_ sender: Any) {
         let btn = sender as! UIButton
         btn.isSelected = !btn.isSelected
@@ -64,6 +89,7 @@ class FixedViewController: UIViewController {
             case "terrible"?:
                 if btn.isSelected{
                     btn.setImage(UIImage(named: "terrible"), for: .normal)
+                    selectedAnswer = 1
 
                 }else{
                     btn.setImage(UIImage(named: "terribleEmoji"), for: .normal)
@@ -72,6 +98,7 @@ class FixedViewController: UIViewController {
                 return
             case "bad"?:
                 if btn.isSelected{
+                    selectedAnswer = 2
                     btn.setImage(UIImage(named: "bad"), for: .normal)
                     
                 }else{
@@ -81,6 +108,7 @@ class FixedViewController: UIViewController {
                 return
             case "meh"?:
                 if btn.isSelected{
+                    selectedAnswer = 3
                     btn.setImage(UIImage(named: "meh"), for: .normal)
                     
                 }else{
@@ -90,6 +118,7 @@ class FixedViewController: UIViewController {
                 return
             case "good"?:
                 if btn.isSelected{
+                    selectedAnswer = 4
                     btn.setImage(UIImage(named: "good"), for: .normal)
 
                     
@@ -99,6 +128,7 @@ class FixedViewController: UIViewController {
                 return
             case "great"?:
                 if btn.isSelected{
+                    selectedAnswer = 5
                     btn.setImage(UIImage(named: "great"), for: .normal)
                     
                 }else{

@@ -20,9 +20,10 @@
 		E3A699F51FC30D8C001B3D70 /* FixedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */; };
 		E3A699F71FC30D98001B3D70 /* FloatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */; };
 		E3A699F91FC30DF5001B3D70 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A699F81FC30DF5001B3D70 /* PageViewController.swift */; };
-		E3EAE1641FCAE56300B02967 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1631FCAE56300B02967 /* APIManager.swift */; };
-		E3EAE1661FCAE56A00B02967 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */; };
-		E3EAE1681FCAE68200B02967 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAE1671FCAE68200B02967 /* DataModel.swift */; };
+		E3EFE4951FCAF100006B9878 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFE4911FCAF100006B9878 /* DataModel.swift */; };
+		E3EFE4961FCAF100006B9878 /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFE4921FCAF100006B9878 /* DataTypes.swift */; };
+		E3EFE4971FCAF100006B9878 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFE4931FCAF100006B9878 /* APIManager.swift */; };
+		E3EFE4981FCAF100006B9878 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EFE4941FCAF100006B9878 /* NetworkRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +67,10 @@
 		E3A699F81FC30DF5001B3D70 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "American Purpose.ttf"; path = "../../LOTW SurveyApp/American Purpose.ttf"; sourceTree = "<group>"; };
 		E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Futura LtCn BT Light.ttf"; path = "../../LOTW SurveyApp/Futura LtCn BT Light.ttf"; sourceTree = "<group>"; };
-		E3EAE1631FCAE56300B02967 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = ../../Everestminds/Do2rom/Ios_app/Do2rom/Do2rom/APIManager.swift; sourceTree = "<group>"; };
-		E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequests.swift; path = ../../Everestminds/Do2rom/Ios_app/Do2rom/Do2rom/NetworkRequests.swift; sourceTree = "<group>"; };
-		E3EAE1671FCAE68200B02967 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = ../../../.Trash/DataModel.swift; sourceTree = "<group>"; };
+		E3EFE4911FCAF100006B9878 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = SurveyApp/Models/DataModel.swift; sourceTree = SOURCE_ROOT; };
+		E3EFE4921FCAF100006B9878 /* DataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataTypes.swift; path = SurveyApp/Models/DataTypes.swift; sourceTree = SOURCE_ROOT; };
+		E3EFE4931FCAF100006B9878 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = SurveyApp/Models/APIManager.swift; sourceTree = SOURCE_ROOT; };
+		E3EFE4941FCAF100006B9878 /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkRequests.swift; path = SurveyApp/Models/NetworkRequests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,14 +136,12 @@
 				E3A699FE1FC33C60001B3D70 /* American Purpose.ttf */,
 				E3A699FF1FC33C60001B3D70 /* Futura LtCn BT Light.ttf */,
 				E38EDE601FC2EA8400DA11FB /* AppDelegate.swift */,
-				E3EAE1631FCAE56300B02967 /* APIManager.swift */,
+				E3EFE4881FCAEC5C006B9878 /* Models */,
 				E38EDE621FC2EA8400DA11FB /* ViewController.swift */,
 				E38EDE641FC2EA8400DA11FB /* Main.storyboard */,
 				E38EDE671FC2EA8400DA11FB /* Assets.xcassets */,
-				E3EAE1671FCAE68200B02967 /* DataModel.swift */,
 				E38EDE691FC2EA8400DA11FB /* LaunchScreen.storyboard */,
 				E38EDE6C1FC2EA8400DA11FB /* Info.plist */,
-				E3EAE1651FCAE56A00B02967 /* NetworkRequests.swift */,
 				E3A699F41FC30D8C001B3D70 /* FixedViewController.swift */,
 				E3A699F61FC30D98001B3D70 /* FloatingViewController.swift */,
 				E3A699F81FC30DF5001B3D70 /* PageViewController.swift */,
@@ -167,6 +167,18 @@
 				E38EDE821FC2EA8400DA11FB /* Info.plist */,
 			);
 			path = SurveyAppUITests;
+			sourceTree = "<group>";
+		};
+		E3EFE4881FCAEC5C006B9878 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E3EFE4931FCAF100006B9878 /* APIManager.swift */,
+				E3EFE4911FCAF100006B9878 /* DataModel.swift */,
+				E3EFE4921FCAF100006B9878 /* DataTypes.swift */,
+				E3EFE4941FCAF100006B9878 /* NetworkRequests.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		EF0105B3DFC124E37AC8D4E2 /* Frameworks */ = {
@@ -369,15 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3EFE4951FCAF100006B9878 /* DataModel.swift in Sources */,
+				E3EFE4961FCAF100006B9878 /* DataTypes.swift in Sources */,
 				E3A699F71FC30D98001B3D70 /* FloatingViewController.swift in Sources */,
+				E3EFE4971FCAF100006B9878 /* APIManager.swift in Sources */,
 				E3A699F91FC30DF5001B3D70 /* PageViewController.swift in Sources */,
 				E3A699F51FC30D8C001B3D70 /* FixedViewController.swift in Sources */,
+				E3EFE4981FCAF100006B9878 /* NetworkRequests.swift in Sources */,
 				257EE49C1FC34BE20063B424 /* GreetingViewController.swift in Sources */,
 				E38EDE631FC2EA8400DA11FB /* ViewController.swift in Sources */,
 				E38EDE611FC2EA8400DA11FB /* AppDelegate.swift in Sources */,
-				E3EAE1661FCAE56A00B02967 /* NetworkRequests.swift in Sources */,
-				E3EAE1641FCAE56300B02967 /* APIManager.swift in Sources */,
-				E3EAE1681FCAE68200B02967 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

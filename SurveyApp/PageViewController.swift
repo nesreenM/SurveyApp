@@ -8,10 +8,12 @@
 
 import UIKit
 
-class PageViewController: UIPageViewController,SwipeDelegate {
+class PageViewController: UIPageViewController,SwipeDelegate , NetworkRequestsCompletionHandler{
+   
+    
     var currentIndex = 0
     func swipedLeft() {
-        print("Swiped left" , currentIndex)
+        print("Swiped left" , currentIndex , "orderedViewControllers.count " , orderedViewControllers.count )
         //        viewControllers
         if currentIndex > 0 {
             currentIndex -= 1
@@ -23,7 +25,7 @@ class PageViewController: UIPageViewController,SwipeDelegate {
     }
     
     func swipedRight() {
-        print("Swiped right" , currentIndex)
+        print("Swiped right" , currentIndex, "orderedViewControllers.count " , orderedViewControllers.count)
 //        viewControllers
         if currentIndex < orderedViewControllers.count - 1 {
             currentIndex += 1
@@ -32,34 +34,29 @@ class PageViewController: UIPageViewController,SwipeDelegate {
         if currentIndex < orderedViewControllers.count {
             self.setViewControllers([orderedViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
         }
+        if currentIndex == 5{
+            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
+            present(vc, animated: true, completion: nil)
+            
+        }
+
     }
-    
-   
-    let vc1 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "FloatingViewController")
-    let vc4 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "FloatingViewController")
-    
-    
-    let vc2  = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
-    let vc3 = UIStoryboard(name: "Main", bundle: nil) .
-        instantiateViewController(withIdentifier: "FixedViewController") as! FixedViewController
-    
+
     var type : [UIViewController] = []
-    var typesArray = ["F","N","N","F","N","F","N"]
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         // The view controllers will be shown in this order
-        for vc in self.typesArray {
-            if vc == "F" {
+        for qs in DataModel.sharedInstance.activeQuestions {
+            if !qs.isMultiSelect {
                // 3 green
                 let v = self.newVc(name: "FixedViewController") as! FixedViewController
                 v.delegate = self
+                v.currentQuestionID = qs.id
                 self.type.append(v)
             }else{
                 let v = self.newVc(name: "FloatingViewController") as! FloatingViewController
                 v.delegate = self
+                v.currentQuestionID = qs.id
                self.type.append(v)
             }
         }
@@ -140,18 +137,15 @@ extension PageViewController : UIPageViewControllerDataSource{
         
         return orderedViewControllers[previousIndex]
     }
-//    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        return orderedViewControllers.count
-//    }
-//
-//    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-//        guard let firstViewController = viewControllers?.first,
-//             firstViewControllerIndex = orderedViewControllers.index(of: firstViewController) else {
-//                return 0
-//        }
-//
-//        return firstViewControllerIndex
-//    }
+    func onCompleteUpdateView(_ methodName: String) {
+        print("Success \(methodName)")
+
+    }
+    
+    func onErrorUpdateView(_ errorMessage: String, _ methodName: String) {
+        print("Error \(errorMessage) \(methodName)")
+    }
+
 }
 protocol SwipeDelegate{
     func swipedLeft()

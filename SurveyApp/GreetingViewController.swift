@@ -26,12 +26,13 @@ class GreetingViewController: UIViewController,NetworkRequestsCompletionHandler 
     @IBAction func rateMe(_ sender: Any) {
         
         NetworkRequests().getActiveQuestions(sender: self)
-        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
-        present(vc, animated: true, completion: nil)
+        
         
     }
     func onCompleteUpdateView(_ methodName: String) {
         print("Success \(methodName)")
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+        present(vc, animated: true, completion: nil)
     }
     
     func onErrorUpdateView(_ errorMessage: String, _ methodName: String) {

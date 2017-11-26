@@ -21,6 +21,7 @@ class FloatingViewController: UIViewController {
     var loaded = false
     
     var delegate : SwipeDelegate?
+    var currentQuestionID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class FloatingViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasDeselected), name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: nil)
         loaded = true
         
+        question.text = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.body
+        
     }
     @objc func rightTapped() {
     delegate?.swipedRight()
@@ -50,15 +53,30 @@ class FloatingViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         if (loaded) {
-            self.bubblesView.dataArray = DataModel.sharedInstance.choices
+            var answersArray : [String] = []
+            let answers = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.answer
+            for a in answers! {
+                answersArray.append(a.body)
+            }
+            self.bubblesView.dataArray = NSMutableArray(array: answersArray)
             loaded = false
         }
         
         
     }
     override func viewWillDisappear(_ animated: Bool) {
-        DataModel.sharedInstance.choices.removeObjects(in: selectedAnswers)
-
+        
+        for selected in selectedAnswers{
+            let id = getAnswerByBody(body: selected)
+            if (DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] != nil) {
+                DataModel.sharedInstance.questionAnswerTuple[currentQuestionID]?.append(id)
+            }
+            else
+            {
+               DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] = [id]
+            }
+            
+        }
     }
     @objc func bubbleWasSelected(notification: NSNotification) {
         print(notification.object as! String)
@@ -67,7 +85,6 @@ class FloatingViewController: UIViewController {
     }
     
     @objc func bubbleWasDeselected(notification: NSNotification) {
-        print("@@@@")
 
         print(notification.object as! String)
         let deselectedAnswer = notification.object as! String
@@ -76,6 +93,16 @@ class FloatingViewController: UIViewController {
         
         print("Deselected " , selectedAnswers)
         
+    }
+    func getAnswerByBody(body:String) -> Int{
+        let answerArray = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.answer
+        for answer in answerArray!{
+            if answer.body == body{
+                return answer.id
+            }
+        }
+        return 0
+    
     }
 
 }

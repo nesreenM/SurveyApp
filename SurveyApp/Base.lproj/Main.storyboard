@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -357,51 +356,42 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="SurveyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How was the service?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGh-Py-vBL">
-                                <rect key="frame" x="377.5" y="185" width="270" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6m-G5-ed4" customClass="CSBubblesView" customModule="Bubbles">
-                                <rect key="frame" x="0.0" y="330" width="1024" height="484"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundLotwLogo" translatesAutoresizingMaskIntoConstraints="NO" id="o3g-q8-Zhu">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-Z6-bn3">
+                                <rect key="frame" x="412" y="364" width="200" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="484" id="tDC-Tp-OUG"/>
+                                    <constraint firstAttribute="height" constant="40" id="EPg-0B-yIT"/>
+                                    <constraint firstAttribute="width" constant="200" id="GUe-Kf-BrQ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="primaryColor">
-                                        <color key="value" red="0.92549019607843142" green="0.098039215686274508" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryColor">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YvI-R2-BWn"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="0.41506696428571427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rGh-Py-vBL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0rn-sa-XxJ"/>
-                            <constraint firstItem="u6m-G5-ed4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2fr-AR-gsT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6m-G5-ed4" secondAttribute="trailing" id="MWi-SL-wLy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u6m-G5-ed4" secondAttribute="bottom" id="Oc5-X0-zKj"/>
-                            <constraint firstItem="u6m-G5-ed4" firstAttribute="top" secondItem="rGh-Py-vBL" secondAttribute="bottom" constant="64" id="zKZ-qj-bvG"/>
+                            <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Awa-2a-0iT"/>
+                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dim-tG-laU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o3g-q8-Zhu" secondAttribute="bottom" id="E3N-jP-hte"/>
+                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QMY-Nv-yOh"/>
+                            <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QZY-DV-VZF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o3g-q8-Zhu" secondAttribute="trailing" id="Z7M-sc-zYt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="bubblesView" destination="u6m-G5-ed4" id="xdZ-8K-Kdu"/>
-                        <outlet property="questionLabel" destination="rGh-Py-vBL" id="1zE-wM-h36"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="816"/>
+            <point key="canvasLocation" x="36.9140625" y="815.625"/>
         </scene>
     </scenes>
     <resources>

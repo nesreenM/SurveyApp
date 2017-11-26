@@ -9,40 +9,34 @@
 import UIKit
 import Bubbles
 import SpriteKit
-class ViewController: UIViewController {
+class ViewController: UIViewController,NetworkRequestsCompletionHandler{
 
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var bubblesView: CSBubblesView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // Do any additional setup after loading the view, typically from a nib.
-        NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasSelected), name: NSNotification.Name(rawValue: "BubbleWasSelected"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.bubbleWasDeselected), name: NSNotification.Name(rawValue: "BubbleWasDeselected"), object: nil)
-       
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        self.bubblesView.dataArray = NSMutableArray(array: ["Argentina", "Aruba", "Australia", "Austria", "Bahamas","Argentina", "Aruba", "Australia", "Austria", "Bahamas","Argentina", "Aruba", "Waiters response time", "Cleaniness", "Food service"])
-        
-
+    
+    @IBAction func submitAction(_ sender: Any) {
+        for question in DataModel.sharedInstance.activeQuestions
+        {
+            print("Answers ", DataModel.sharedInstance.questionAnswerTuple[question.id])
+            let selectedAnswers = DataModel.sharedInstance.questionAnswerTuple[question.id]
+            NetworkRequests().postResponse(questionId: question.id, answerId: selectedAnswers!, responseId: 1 , sender: self)
+        }
     }
-    @objc func bubbleWasSelected(notification: NSNotification) {
-        print(notification.object as! String)
-        questionLabel.text = ""
-
-        questionLabel.text = "Rate our waiters please"
+    func onCompleteUpdateView(_ methodName: String) {
+        print("Success \(methodName)")
+        
     }
     
-    @objc func bubbleWasDeselected(notification: NSNotification) {
-        print(notification.object as! String)
+    func onErrorUpdateView(_ errorMessage: String, _ methodName: String) {
+        print("Error \(errorMessage) \(methodName)")
     }
-
+    
 }
 
 
