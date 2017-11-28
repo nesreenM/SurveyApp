@@ -9,7 +9,7 @@
 import UIKit
 
 class FixedViewController: UIViewController {
-
+    
     @IBOutlet weak var leftArrowImage: UIImageView!
     @IBOutlet weak var arrowImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
@@ -25,43 +25,63 @@ class FixedViewController: UIViewController {
     var selectedAnswer = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let rightTappedGesture = UITapGestureRecognizer(target: self, action: #selector(rightTapped))
         arrowImageView.addGestureRecognizer(rightTappedGesture)
         arrowImageView.isUserInteractionEnabled = true
         
         let leftTappedGesture = UITapGestureRecognizer(target: self, action: #selector(leftTapped))
-
+        
         leftArrowImage.addGestureRecognizer(leftTappedGesture)
         leftArrowImage.isUserInteractionEnabled = true
         label.text = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.body
+        
+        terribleButton.setImage(UIImage(named: "terrible"), for: .selected)
+        
+        terribleButton.setImage(UIImage(named: "terribleEmoji"), for: .normal)
 
+        badButton.setImage(UIImage(named: "bad"), for: .selected)
+        
+        badButton.setImage(UIImage(named: "badEmoji"), for: .normal)
 
+        mehButton.setImage(UIImage(named: "meh"), for: .selected)
+        
+        mehButton.setImage(UIImage(named: "mehEmoji"), for: .normal)
+
+        goodButton.setImage(UIImage(named: "good"), for: .selected)
+        
+        goodButton.setImage(UIImage(named: "goodEmoji"), for: .normal)
+
+        greatButton.setImage(UIImage(named: "great"), for: .selected)
+        
+        greatButton.setImage(UIImage(named: "greatEmoji"), for: .normal)
+
+        
     }
     @objc func rightTapped (){
         delegate?.swipedRight()
-
+        
     }
     @objc func leftTapped(){
         delegate?.swipedLeft()
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
     }
     override func viewWillDisappear(_ animated: Bool) {
         
-        if (DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] != nil) {
-            DataModel.sharedInstance.questionAnswerTuple[currentQuestionID]?.append(
+        if (DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID] != nil) {
+            DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID]?.append(
                 getAnswerByValue(value: selectedAnswer))
         }else{
-            DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] =
+            DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID] =
                 [getAnswerByValue(value: selectedAnswer)]
         }
         
@@ -69,7 +89,7 @@ class FixedViewController: UIViewController {
         
         
     }
-
+    
     func getAnswerByValue(value:Int) -> Int{
         
         let answers = DataModel.sharedInstance.getQuestionByID(id: currentQuestionID)?.answer
@@ -79,72 +99,88 @@ class FixedViewController: UIViewController {
             }
         }
         return 0
-    
+        
+    }
+    func unSelectButtons(btn:UIButton){
+        
+        switch btn.restorationIdentifier {
+        case "terrible"?:
+            greatButton.isSelected = false
+            goodButton.isSelected = false
+            mehButton.isSelected = false
+            badButton.isSelected = false
+            return
+        case "bad"?:
+            greatButton.isSelected = false
+            goodButton.isSelected = false
+            mehButton.isSelected = false
+            terribleButton.isSelected = false
+            
+            return
+        case "meh"?:
+            greatButton.isSelected = false
+            goodButton.isSelected = false
+            badButton.isSelected = false
+            terribleButton.isSelected = false
+            return
+        case "good"?:
+            greatButton.isSelected = false
+            mehButton.isSelected = false
+            badButton.isSelected = false
+            terribleButton.isSelected = false
+            return
+        case "great"?:
+            goodButton.isSelected = false
+            mehButton.isSelected = false
+            badButton.isSelected = false
+            terribleButton.isSelected = false
+            return
+            
+        default:
+            btn.imageView?.image = UIImage()
+        }
     }
     @IBAction func selectedButton(_ sender: Any) {
         let btn = sender as! UIButton
+        unSelectButtons(btn: btn)
         btn.isSelected = !btn.isSelected
-//        if btn.isSelected {
-            switch btn.restorationIdentifier {
-            case "terrible"?:
-                if btn.isSelected{
-                    btn.setImage(UIImage(named: "terrible"), for: .normal)
-                    selectedAnswer = 1
-
-                }else{
-                    btn.setImage(UIImage(named: "terribleEmoji"), for: .normal)
-
-                }
-                return
-            case "bad"?:
-                if btn.isSelected{
-                    selectedAnswer = 2
-                    btn.setImage(UIImage(named: "bad"), for: .normal)
-                    
-                }else{
-                    btn.setImage(UIImage(named: "badEmoji"), for: .normal)
-                    
-                }
-                return
-            case "meh"?:
-                if btn.isSelected{
-                    selectedAnswer = 3
-                    btn.setImage(UIImage(named: "meh"), for: .normal)
-                    
-                }else{
-                    btn.setImage(UIImage(named: "mehEmoji"), for: .normal)
-                    
-                }
-                return
-            case "good"?:
-                if btn.isSelected{
-                    selectedAnswer = 4
-                    btn.setImage(UIImage(named: "good"), for: .normal)
-
-                    
-                }else{
-                    btn.setImage(UIImage(named: "goodEmoji"), for: .normal)
-                }
-                return
-            case "great"?:
-                if btn.isSelected{
-                    selectedAnswer = 5
-                    btn.setImage(UIImage(named: "great"), for: .normal)
-                    
-                }else{
-                    btn.setImage(UIImage(named: "greatEmoji"), for: .normal)
-
-                    
-                }
-                return
-                
-            default:
-                btn.imageView?.image = UIImage()
-            }
-//        }
         
-       
+        switch btn.restorationIdentifier {
+        case "terrible"?:
+            if btn.isSelected{
+                selectedAnswer = 1
 
+            }
+            return
+        case "bad"?:
+            if btn.isSelected{
+                selectedAnswer = 2
+
+            }
+            return
+        case "meh"?:
+            if btn.isSelected{
+                selectedAnswer = 3
+
+            }
+            return
+        case "good"?:
+            if btn.isSelected{
+                selectedAnswer = 4
+            }
+            return
+        case "great"?:
+            if btn.isSelected{
+                selectedAnswer = 5
+            }
+            return
+
+        default:
+            btn.imageView?.image = UIImage()
+        }
+
+        
+        
     }
 }
 

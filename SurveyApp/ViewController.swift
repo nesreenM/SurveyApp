@@ -23,8 +23,8 @@ class ViewController: UIViewController,NetworkRequestsCompletionHandler{
     @IBAction func submitAction(_ sender: Any) {
         for question in DataModel.sharedInstance.activeQuestions
         {
-            print("Answers ", DataModel.sharedInstance.questionAnswerTuple[question.id])
-            let selectedAnswers = DataModel.sharedInstance.questionAnswerTuple[question.id]
+            print("Answers ", DataModel.sharedInstance.questionAnswerDictionary[question.id])
+            let selectedAnswers = DataModel.sharedInstance.questionAnswerDictionary[question.id]
             NetworkRequests().postResponse(questionId: question.id, answerId: selectedAnswers!, responseId: 1 , sender: self)
         }
     }

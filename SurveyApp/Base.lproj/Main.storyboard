@@ -344,9 +344,14 @@
                     </view>
                     <connections>
                         <outlet property="arrowImageView" destination="kFk-8K-wBF" id="gFv-Fw-cwa"/>
+                        <outlet property="badButton" destination="cQ6-cz-0rW" id="6np-68-9tF"/>
                         <outlet property="choiceImageView" destination="VrR-B4-L6d" id="tnn-3q-fKC"/>
+                        <outlet property="goodButton" destination="SqH-EQ-bVI" id="DV4-ix-TGp"/>
+                        <outlet property="greatButton" destination="HXY-XM-GDT" id="xey-NL-Ikd"/>
                         <outlet property="label" destination="k3N-xJ-Fjd" id="IdX-Hm-dbC"/>
                         <outlet property="leftArrowImage" destination="EwS-y8-Uyg" id="Eee-H6-LbP"/>
+                        <outlet property="mehButton" destination="wMo-lz-mpF" id="nHp-3S-gxP"/>
+                        <outlet property="terribleButton" destination="2b4-CA-F9d" id="7jX-rk-r3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gh-LU-D6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -371,7 +376,10 @@
                                     <constraint firstAttribute="height" constant="40" id="EPg-0B-yIT"/>
                                     <constraint firstAttribute="width" constant="200" id="GUe-Kf-BrQ"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="submitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YvI-R2-BWn"/>
                                 </connections>

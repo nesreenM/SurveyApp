@@ -68,12 +68,12 @@ class FloatingViewController: UIViewController {
         
         for selected in selectedAnswers{
             let id = getAnswerByBody(body: selected)
-            if (DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] != nil) {
-                DataModel.sharedInstance.questionAnswerTuple[currentQuestionID]?.append(id)
+            if (DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID] != nil) {
+                DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID]?.append(id)
             }
             else
             {
-               DataModel.sharedInstance.questionAnswerTuple[currentQuestionID] = [id]
+               DataModel.sharedInstance.questionAnswerDictionary[currentQuestionID] = [id]
             }
             
         }

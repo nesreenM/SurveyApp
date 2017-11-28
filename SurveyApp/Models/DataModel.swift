@@ -17,7 +17,8 @@ class DataModel {
     
     
     var activeQuestions : [Question] = []
-    var questionAnswerTuple: [Int:[Int]] = [:]
+    // Key = QuestionId , Value = Array of AnswerID
+    var questionAnswerDictionary: [Int:[Int]] = [:]
     
     private init(){}
     
