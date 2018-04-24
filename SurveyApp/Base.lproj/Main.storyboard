@@ -370,13 +370,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-Z6-bn3">
-                                <rect key="frame" x="412" y="364" width="200" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="EPg-0B-yIT"/>
-                                    <constraint firstAttribute="width" constant="200" id="GUe-Kf-BrQ"/>
-                                </constraints>
+                                <rect key="frame" x="399" y="347.5" width="226" height="73"/>
+                                <color key="backgroundColor" red="0.9137254901960784" green="0.59999999999999998" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="27"/>
+                                <inset key="contentEdgeInsets" minX="64" minY="20" maxX="64" maxY="20"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -384,18 +381,31 @@
                                     <action selector="submitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YvI-R2-BWn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Thank you for your feedback. Our support team will work on applying it and looking forward to seeing you again!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Df-u8-eEO">
+                                <rect key="frame" x="100" y="221" width="824" height="62.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="26"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Awa-2a-0iT"/>
-                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-20" id="Dim-tG-laU"/>
+                            <constraint firstItem="o3g-q8-Zhu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dim-tG-laU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="o3g-q8-Zhu" secondAttribute="bottom" id="E3N-jP-hte"/>
                             <constraint firstItem="o3g-q8-Zhu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QMY-Nv-yOh"/>
                             <constraint firstItem="VMJ-Z6-bn3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QZY-DV-VZF"/>
+                            <constraint firstItem="8Df-u8-eEO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="RCl-eH-BkR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o3g-q8-Zhu" secondAttribute="trailing" id="Z7M-sc-zYt"/>
+                            <constraint firstItem="VMJ-Z6-bn3" firstAttribute="top" secondItem="8Df-u8-eEO" secondAttribute="bottom" constant="64" id="mct-kv-eHO"/>
+                            <constraint firstItem="8Df-u8-eEO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="phG-IG-mns"/>
+                            <constraint firstItem="8Df-u8-eEO" firstAttribute="centerX" secondItem="VMJ-Z6-bn3" secondAttribute="centerX" id="rgG-Ob-ksW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="submitButton" destination="VMJ-Z6-bn3" id="BwP-fg-2OH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

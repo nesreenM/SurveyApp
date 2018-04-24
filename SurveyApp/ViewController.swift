@@ -11,8 +11,11 @@ import Bubbles
 import SpriteKit
 class ViewController: UIViewController,NetworkRequestsCompletionHandler{
 
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.layer.cornerRadius = submitButton.layer.bounds.height / 2
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,8 +27,8 @@ class ViewController: UIViewController,NetworkRequestsCompletionHandler{
         for question in DataModel.sharedInstance.activeQuestions
         {
             print("Answers ", DataModel.sharedInstance.questionAnswerDictionary[question.id])
-            let selectedAnswers = DataModel.sharedInstance.questionAnswerDictionary[question.id]
-            NetworkRequests().postResponse(questionId: question.id, answerId: selectedAnswers!, responseId: 1 , sender: self)
+//            let selectedAnswers = DataModel.sharedInstance.questionAnswerDictionary[question.id]
+//            NetworkRequests().postResponse(questionId: question.id, answerId: selectedAnswers!, responseId: 1 , sender: self)
         }
     }
     func onCompleteUpdateView(_ methodName: String) {
